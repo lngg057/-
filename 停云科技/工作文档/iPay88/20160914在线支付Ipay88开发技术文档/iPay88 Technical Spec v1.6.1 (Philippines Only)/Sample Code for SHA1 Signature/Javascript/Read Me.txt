@@ -1,0 +1,12 @@
+1. Please upload the js file to your server
+2. Include the js file in your production payment page in order to use the signature function
+3. Concatenate the value to be hash
+4. Call the following function in your javascript tag by passing in your string to hash to generate the signature
+
+<script type="text/javascript" src="sha1.js"></script>
+<script language="javascript">
+  document.write(iPay88Signature(strToHash));
+</script>
+
+
+5. Pass the signature generated to iPay88 payment page in the form element call "Signature"

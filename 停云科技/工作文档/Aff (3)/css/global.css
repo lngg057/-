@@ -1,0 +1,285 @@
+/*
+* @Author: Administrator
+* @Date:   2016-08-30 09:32:53
+* @Last Modified by:   Administrator
+* @Last Modified time: 2016-08-30 18:12:57
+*/
+*{margin: 0;padding: 0;list-style: none;}
+body{
+	background: #F4F4F4;
+	font-family: Arial, Helvetica, sans-serif;
+}
+a{text-decoration: none;}
+.clearfix:after {
+  content: " ";
+  display: block;
+  clear: both;
+  height: 0;
+}
+.clearfix {
+  zoom: 1;
+}
+.hid{
+	display: none;
+}
+/* -----------------------头部--------------------------- */
+.box1{
+	width: 100%;
+	height: 100px;
+	border-bottom: 1px solid #ccc;
+	background: #fff;
+}
+.center{
+	width: 1200px;
+	margin: 0 auto;
+}
+.header{
+	height: 100px;
+	width: 1200px;
+}
+.logo{
+	width: 260px;
+	height: 100px;
+	background: url(../images/logo.png) no-repeat center;
+	float: left;
+}
+/* ------------------------头部右侧部分-------------------------------- */
+.header-r{
+	width: 260px;
+	height: 100px;
+	float: right;
+	position: relative;
+}
+.header-r li{
+	float: left;
+	margin-right: 17px;
+}
+/* -------------------notifications弹框部分------------------------- */
+.notifications{
+	width: 30px;
+	height: 28px;
+	display: inline-block;
+	margin: 36px 10px 0px 20px; 
+	position: relative;
+}
+.icon-noti{
+	width: 24px;
+	height: 20px;
+	position: absolute;
+	background:url(../images/notifications.png) no-repeat;
+	bottom: 0;
+	right: 0;
+}
+.number{
+	width: 18px;
+	height: 18px;
+	background: #e02222;
+	border-radius: 50%;
+	position: absolute;
+	font-size: 14px;
+	color: #fff;
+	text-align: center;
+	line-height: 18px;
+}
+
+.click{
+	width: 250px;
+	height: 285px;
+	background: #fff;
+	border-radius: 4px;
+	position: absolute;
+	left: -180px;
+	border: 1px solid #ccc;
+}
+.click li{
+	width: 250px;
+	height: 46px;
+	border-bottom: 1px solid #ccc;
+}
+.click li h1,.email-click li h1{
+	width: 240px;
+	height: 46px;
+	background: #e4e4e4;
+	font-size: 14px;
+	font-weight: 700;
+	line-height: 46px;
+	color: #333;
+	display: block;
+	padding-left: 10px;
+	border-radius: 4px 4px 0 0;
+	position: relative;
+}
+.noti-arr{
+	width: 0;
+	height: 0;
+	border:6px solid transparent;    
+	border-bottom-color:#e4e4e4;
+	position: absolute;
+	top: -12px;
+	right: 28px;
+}
+.click li a{
+	text-decoration: none;
+}
+.click li a span{
+	font-size: 14px;
+	color: #333;
+	font-weight: 400;
+	line-height: 46px;
+	margin-left: 20px;
+	float: left;
+	width: 135px;
+	height: 46px;
+	display: block;
+	float: left;
+	overflow:hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.click li a b{
+	font-size: 14px;
+	font-weight: 700;
+	line-height: 46px;
+	color: #333;
+	float: right;
+	margin-right: 10px;
+}
+.click .last ,.email-click .last{
+	border-bottom: 0;
+}
+.click li a .more{
+	font-weight: 700;
+	margin-left: 10px;
+	width: 200px;
+}
+.click li a .more-arr{
+	width: 19px;
+	height: 19px;
+	background:url(../images/more.png) no-repeat;
+	margin-top: 15px;
+}
+/* -------------------------email部分-------------------------- */
+.icon-email{
+	width: 25px;
+	height: 18px;
+	position: absolute;
+	background:url(../images/email.png) no-repeat;
+	bottom: 0;
+	right: 0;
+}
+/* -------------------------email弹框部分-------------------------- */
+.email-click{
+	width: 250px;
+	height: 305px;
+	background: #fff;
+	border-radius: 4px;
+	position: absolute;
+	left: -94px;
+	border: 1px solid #ccc;
+}
+.email-click .title{
+	height: 46px;
+}
+.email-click li{
+	width: 250px;
+	height: 70px;
+	border-bottom: 1px solid #ccc;
+}
+.email-click li a{
+	text-decoration: none;
+	padding-top: 10px;
+}
+.email-click li a span{
+	font-size: 14px;
+	color: #40a8ea;
+	float: left;
+	margin: 10px 0 0 20px;
+}
+.email-click li a b{
+	font-size: 14px;
+	font-weight: 700;
+	color: #333;
+	float: right;
+	margin: 10px 10px 0 0 ;
+}
+.email-click li a p{
+	float: left;
+	font-size: 14px;
+	color: #333;
+	margin: 2px 20px 0 20px;
+	line-height: 18px;
+	height: 40px;
+	width: 210px;
+	overflow:hidden;
+	text-overflow: ellipsis;
+}
+.email-click li a .more{
+	font-weight: 700;
+	margin-left: 10px;
+	font-size: 14px;
+	color: #333;
+}
+.email-click li a .more-arr{
+	width: 19px;
+	height: 19px;
+	background:url(../images/more.png) no-repeat;
+}
+
+/* -----------------------account部分-------------------------- */
+.account span{
+	text-decoration:none;
+	font-size: 16px;
+	font-weight: 700;
+	color: #333;
+	line-height: 100px;
+}
+.account i{
+	width: 12px;
+	height: 6px;
+	background:url(../images/down-arr.png) no-repeat;
+	display: inline-block;
+}
+.acc-click{
+	width: 172px;
+	height: 93px;
+	border: 1px solid #ccc;
+	position: absolute;
+	top: 70px;
+	left: 70px;
+	background: #fff;
+	border-radius: 4px;
+}
+.acc-click li{
+	width: 172px;
+	height: 46px;
+	border-bottom: 1px solid #ccc;
+}
+.acc-arr{
+	width: 0;
+	height: 0;
+	border:6px solid transparent;    
+	border-bottom-color:#fff;
+	position: absolute;
+	top: -12px;
+	right: 28px;
+}
+.acc-click li a{
+	font-size: 16px;
+	line-height: 46px;
+	color: #333;
+	margin-left: 20px;
+}
+.acc-click li .out{
+	color: #e02222;
+}
+/* ------------------------------footer---------------------------- */
+.footer{
+	width: 1200px;
+	height: 60px;
+}
+.footer p{
+	font-size: 12px;
+	color: #333;
+	text-align: center;
+	line-height: 60px;
+}

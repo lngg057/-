@@ -1,0 +1,19 @@
+/* CSS Document */
+
+.a_12_gray{
+	font-size:12px;
+	color:#666;
+	text-decoration:none;
+}
+.a_12_gray:hover{
+	color:#F60;
+}
+
+.a_12_org{
+	font-size:12px;
+	color:#F60;
+	text-decoration:none;
+}
+.a_12_org:hover{
+	color:#C00;
+}

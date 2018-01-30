@@ -1,0 +1,149 @@
+/*
+* @Author: Administrator
+* @Date:   2016-08-31 17:11:52
+* @Last Modified by:   Administrator
+* @Last Modified time: 2016-09-01 09:20:14
+*/
+.box{
+	width: 100%;
+}
+input{
+	outline: none;
+}
+/* -----------------------------左侧标题------------------------------ */
+.coun-l{
+	width: 240px;
+	height: 254px;
+	background: #fff;
+	float: left;
+	margin-top: 20px;
+	border-radius: 4px;
+}
+.coun-l ul li{
+	width: 240px;
+	height: 50px;
+	border-bottom: 1px solid #e5e5e5;
+}
+.acc-title h1{
+	font-size: 18px;
+	color: #fff;
+	background: #ed761e;
+	width: 230px;
+	height: 50px;
+	border-radius: 4px 4px 0 0;
+	padding-left: 10px;
+	line-height: 50px;
+}
+.coun-l ul li a{
+	font-size: 14px;
+	color: #333;
+	padding-left: 14px;
+	line-height: 50px;
+}
+.on{
+	border-left: 3px solid #ed761e;
+	box-sizing: border-box;
+}
+.coun-l ul .on a{
+	margin-left: -3px;
+	color:#ed761e; 
+}
+/* -----------------------------右侧内容------------------------------ */
+.coun-r{
+	width: 940px;
+	/* height: 954px; */
+	background: #fff;
+	float: right;
+	margin-top: 20px;
+	border-radius: 4px;
+}
+.coun-r h1{
+	width: 930px;
+	height: 50px;
+	background: #EAEAEA;
+	font-size: 16px;
+	padding-left: 10px;
+	border-radius: 4px 4px 0 0;
+	line-height: 50px;
+	color:#ed761e; 
+	font-weight: 400;
+}
+.coun-r p{
+	font-size: 16px;
+	color: #333;
+	text-align: center;
+	margin-top: 30px;
+
+}
+.change-infor-con{
+	width: 900px;
+	/* height: 770px; */
+	border-radius: 4px;
+	border: 1px solid #e5e5e5;
+	margin: 20px auto;
+	padding-top: 30px;
+}
+.register-top{
+	width: 650px;
+	height: 207px;
+	margin: 0 auto;
+	border-bottom: 1px solid #ccc;
+	padding-top: 30px;
+}
+.reg-in{
+	width: 650px;
+	/* height: 40px; */
+	margin:0 auto 20px auto;
+}
+.reg-in span{
+	display: inline-block;
+	width: 160px;
+	height: 40px;
+	font-size: 18px;
+	line-height: 40px;
+	color: #333;
+	line-height: 40px;
+	text-align: right;
+}
+
+.reg-in input{
+	width: 390px;
+	height: 40px;
+	padding-left: 10px;
+	border: 1px solid #e5e5e5;
+	margin-left: 24px;
+}
+select{
+	width: 402px;
+	height: 40px;
+	padding-left: 10px;
+	border: 1px solid #e5e5e5;
+	margin-left: 24px;
+	outline: none;
+}
+textarea{
+	width: 58%;
+	margin-left: 24px;
+	border-left: 3px solid #ed761e;
+	outline: none;
+	padding: 10px;
+	float: left;
+}
+/* .complete{
+	position: relative;
+} */
+.top{
+	float: left;
+}
+.change-infor-con a{
+	font-size: 20px;
+	color: #fff;
+	display: block;
+	width: 200px;
+	height: 50px;
+	background: #ed761e;
+	margin: 0 auto 30px auto;
+	border-radius: 4px;
+	text-align: center;
+	line-height: 50px;
+}

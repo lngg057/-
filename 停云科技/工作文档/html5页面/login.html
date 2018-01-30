@@ -1,0 +1,69 @@
+<!doctype html>
+<html class="no-js">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="stylesheet" href="css/amazeui.min.css">
+<link rel="stylesheet" href="css/app.css">
+<script src="js/jquery.min.js"></script>
+<script src="js/amazeui.min.js"></script>
+</head>
+
+<body>
+<!-- top -->
+<header data-am-widget="header" class="am-header am-header-default top">
+  <div class="am-header-left am-header-nav">
+  <a href="javascript:history.go(-1);"><img src="images/ico_back.png"></a>
+  </div>
+  <h1 class="am-header-title">Sign In</h1>
+</header>
+<!--top -->
+
+<!--sign form-->
+<div data-am-widget="tabs" class="am-tabs am-tabs-default sign_tabs" >
+      <ul class="am-tabs-nav am-cf">
+          <li class="am-active"><a href="[data-tab-panel-0]">Sign In</a></li>
+          <li class=""><a href="[data-tab-panel-1]">Register</a></li>
+      </ul>
+<div class="am-tabs-bd noborder">
+<div data-tab-panel-0 class="am-tab-panel am-active">
+<div class="am-g sign_form">
+    <form class="am-form">
+      <fieldset class="am-form-set">
+        <input class="noborder" type="text" placeholder="Email or Member ID">
+        <input type="text" placeholder="Password">
+      </fieldset>
+      <span class="am-fl sign_canshu" style="vertical-align:top;"><input name="" type="checkbox" value="">Remember me</span><a class="am-fr sign_canshu" href="forgetpass.html" style="vertical-align:top; display:inline-block;">Forget Password?</a>
+      <div class="clear"></div>
+      <a class="am-btn am-btn-warning am-btn-block am-radius" href="index.html">Sign In</a>
+    </form>
+    <p class="sign_other">
+    <i>Or sign in with</i>
+    <a class="am-btn am-btn-warning am-btn-block am-radius btn_sign_a" href="#"><img src="images/ico_facebook.png"></a>
+    <a class="am-btn am-btn-warning am-btn-block am-radius btn_sign_b" href="#"><img src="images/ico_google.png"></a>
+    </p>
+</div>
+</div>
+          
+<div data-tab-panel-1 class="am-tab-panel ">
+<div class="am-g sign_form">
+    <form class="am-form">
+      <fieldset class="am-form-set">
+        <input class="noborder" type="text" placeholder="Email">
+        <input type="text" placeholder="Password">
+        <input type="text" placeholder="Repeat Password">
+        <input type="text" placeholder="First Name">
+        <input type="text" placeholder="Last Name">
+      </fieldset>
+      <a class="am-btn am-btn-warning am-btn-block am-radius" href="index.html">Submit</a>
+    </form>
+</div>
+</div>
+</div>
+</div>
+<!--sign form-->
+
+</body>
+</html>

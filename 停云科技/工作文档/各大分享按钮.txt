@@ -1,0 +1,19 @@
+facebook： 现成的，直接修改
+
+
+google+：
+<!-- 将此标记放置在 head 中，或放置在结束 body 标记之前，并使其紧邻此标记。 -->
+<script src="https://apis.google.com/js/platform.js" async defer>
+  {lang: 'zh-CN'}
+</script>
+
+<!-- 将此标记放置在你希望显示分享按钮的位置。 -->
+<div class="g-plus" data-action="share" data-annotation="none"></div>
+
+INSTAGRAM：貌似没找到页面端的分享按钮
+
+Twitter：
+https://dev.twitter.com/web/tweet-button/web-intent
+https://dev.twitter.com/web/tweet-button/parameters#button
+https://dev.twitter.com/web/tweet-button
+

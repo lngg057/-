@@ -1,0 +1,145 @@
+/*
+* @Author: Administrator
+* @Date:   2016-08-31 19:18:23
+* @Last Modified by:   Administrator
+* @Last Modified time: 2016-09-01 09:10:21
+*/
+.box{
+	width: 100%;
+}
+input{
+	outline: none;
+}
+/* -----------------------------左侧标题------------------------------ */
+.coun-l{
+	width: 240px;
+	height: 254px;
+	background: #fff;
+	float: left;
+	margin-top: 20px;
+	border-radius: 4px;
+}
+.coun-l ul li{
+	width: 240px;
+	height: 50px;
+	border-bottom: 1px solid #e5e5e5;
+}
+.acc-title h1{
+	font-size: 18px;
+	color: #fff;
+	background: #ed761e;
+	width: 230px;
+	height: 50px;
+	border-radius: 4px 4px 0 0;
+	padding-left: 10px;
+	line-height: 50px;
+}
+.coun-l ul li a{
+	font-size: 14px;
+	color: #333;
+	padding-left: 14px;
+	line-height: 50px;
+}
+.on{
+	border-left: 3px solid #ed761e;
+	box-sizing: border-box;
+}
+.coun-l ul .on a{
+	margin-left: -3px;
+	color:#ed761e; 
+}
+/* -----------------------------右侧内容------------------------------ */
+.coun-r{
+	width: 940px;
+	/* height:600px; */
+	background: #fff;
+	float: right;
+	margin-top: 20px;
+	border-radius: 4px;
+}
+.coun-r h1{
+	width: 930px;
+	height: 50px;
+	background: #EAEAEA;
+	font-size: 16px;
+	padding-left: 10px;
+	border-radius: 4px 4px 0 0;
+	line-height: 50px;
+	color:#ed761e; 
+	font-weight: 400;
+}
+.coun-r p{
+	width: 900px;
+	margin-top: 20px;
+	font-size: 16px;
+	color: #333;
+	line-height: 24px;
+	padding-left: 20px;
+}
+.note{
+	width: 900px;
+	height: 112px;
+	margin: 0 auto;
+	border-bottom: 1px solid #ccc;
+}
+.note h2{
+	font-size: 16px;
+	color: #ed761e; 
+	font-weight: 400;
+	padding-top: 30px;
+}
+.note p{
+	font-size: 16px;
+	color: #333;
+	text-align: center;
+}
+.method{
+	width: 900px;
+	height: 340px;
+	margin: 0 auto;
+}
+.method h2{
+	font-size: 16px;
+	color: #ed761e; 
+	font-weight: 400;
+	padding-top: 30px;
+}
+.method b{
+	font-size: 16px;
+	font-weight: 700;
+	display: inline-block;
+	color: #333;
+	padding-top: 20px;
+	padding-left: 20px;
+}
+.num{
+	margin-top: 30px;
+}
+.method p{
+	font-size: 16px;
+	color: #333;
+	font-weight: 400;
+	margin-left: 190px;
+	width:600px;
+}
+.method input{
+	width: 300px;
+	height: 50px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	padding-left: 10px;
+	margin-left: 10px;
+}
+.num a{
+	display: block;
+	font-size: 16px;
+	color: #fff;
+	width: 120px;
+	height: 50px;
+	background: #ed761e;
+	text-align: center;
+	line-height: 50px;
+	border-radius: 4px;
+	margin:30px 0 30px 300px;
+
+}

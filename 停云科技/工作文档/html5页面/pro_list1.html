@@ -1,0 +1,174 @@
+<!doctype html>
+<html class="no-js">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="stylesheet" href="css/amazeui.min.css">
+<link rel="stylesheet" href="css/app.css">
+<script src="js/jquery.min.js"></script>
+<script src="js/amazeui.min.js"></script>
+</head>
+
+<body>
+<!-- top -->
+<header data-am-widget="header" class="am-header am-header-default top">
+  <div class="am-header-left am-header-nav">
+  <a href="#doc-oc-demo1" data-am-offcanvas><img src="images/ico_menu.png"></a>
+  
+  </div>
+  <h1 class="am-header-title am-text-truncate">Breads and Cookies</h1>
+  <div class="am-header-right am-header-nav">
+  <a href="search.html"><img src="images/ico_search.png"></a>
+  <a data-am-modal="{target: '#profilter'}" class="top_cart"><img src="images/ico_filter.png"></a>
+  </div>
+</header>
+<!--top -->
+
+<!--filter -->
+<ul class="am-nav am-nav-tabs am-nav-justify pro_list_filter" id="filterChoose">
+  <li><a href="javascript:window.history.forward(1);">Default</a></li>
+  <li><a href="javascript:window.history.forward(1);">Price<img src="images/ico_filter01.png"></a></li>
+  <li><a href="javascript:window.history.forward(1);">Order<img src="images/ico_filter02.png"></a></li>
+</ul>
+<!--filter -->
+<script>
+$("#filterChoose li").click(function(){
+    alert($(this).index());
+});
+
+</script>
+<!--pro list -->
+
+<div data-am-widget="list_news" class="am-list-news am-list-news-default pro_list" >
+  
+<ul class="am-list" id="pList">
+
+      <li class="am-g am-list-item-desced am-list-item-thumbed am-list-item-thumb-left">
+      <a href="pro_show.html">
+        <div class="am-u-sm-4 am-list-thumb"><img src="images/pro01.png" ></div>
+        <div class=" am-u-sm-8 am-list-main">
+        <h3 class="am-list-item-hd">Sound Intone I66 Stereo Metal Stereo Metal Sound Intone I66 Stereo Metal Stereo Metal</h3>
+        <div class="am-list-item-text"><b>₱166.00<i>40% OFF</i></b><del>₱200.00</del></div>
+        </div>
+       </a>
+      </li>
+      <li id="addMore" page="2">加载更多</li>
+      
+</ul>
+<script>
+//$("#addMore").click(function(){
+ //   $("#pList li:last").detach();
+//    $("#pList").append("<li>123</li><li id=\"addMore\">加载更多</li>");
+    
+//});
+
+$("#pList").delegate("#addMore","click",function(){
+    $("#pList li:last").detach();
+    $("#pList").append("<li>123</li><li id=\"addMore\">加载更多</li>");
+});
+</script>
+</div>
+
+<!--pro list -->
+
+<!-- foot -->
+ <footer data-am-widget="footer" class="am-footer am-footer-default foot">
+    <div class="am-footer-switch">
+      <a class="am-footer-desktop" href="javascript:">Privacy Policy</a>
+      <span class="am-footer-divider"> | </span>
+      <a class="am-footer-desktop" href="javascript:">Terms of use</a>
+       <span class="am-footer-divider"> | </span>
+      <a class="am-footer-desktop" href="javascript:">About Us</a>
+    </div>
+    <div class="am-footer-miscs">
+    <p>© 2013-2015 Goods.ph. All rights reserved.</p>
+    <a href="#" class="blue">Change to Desktop Version</a>
+    </div>
+</footer>
+<!-- foot -->
+
+<!-- left_menu -->
+<div id="doc-oc-demo1" class="am-offcanvas">
+  <div class="am-offcanvas-bar left_menu">
+    <div class="am-offcanvas-content" >
+<header data-am-widget="header" class="am-header am-header-default menu_title">
+  <div class="am-fl"><span>42336658@qq.com</span>|<a class="orange" href="index.html">Sign Out</a></div>
+</header>
+
+<ul class="am-list">
+  <li><a href="index.html"><img src="images/ico_menu01.png">Home</a></li>
+  <li class="border"><a href="my_orders.html"><img src="images/ico_menu02.png">My Orders</a></li>
+  <li><a href="gift_card.html"><img src="images/ico_menu03.png">Gift Card</a></li>
+  <li><a href="wish_list.html"><img src="images/ico_menu04.png">Wish List</a></li>
+  <li><a href="basic_information.html"><img src="images/ico_menu05.png">Basic Information</a></li>
+  <li><a href="shipping_address.html"><img src="images/ico_menu06.png">Shipping Address</a></li>
+  <li><a href="change_password.html"><img src="images/ico_menu07.png">Change Password</a></li>
+  <li class="border"><a href="#"><img src="images/ico_menu08.png">Download APP</a></li>
+  <li><a href="help_center.html"><img src="images/ico_menu09.png">Help Center</a></li>
+</ul>
+
+    </div>
+  </div>
+</div>
+<!-- left_menu -->
+
+
+<!-- pro filter -->
+<div class="am-popup show_setting" id="profilter">
+<div class="am-popup-inner">
+
+    <div class="am-popup-hd" > 
+    <div class="menu_title">
+    <h4 class="am-popup-title am-fl">Filter</h4>
+    <span data-am-modal-close class="am-close">&times;</span>
+    </div>
+    </div>
+    
+<ul class="am-list pro_filter">
+  <li class="jt"><a data-am-modal="{target: '#profilter01'}">Brand</a></li>
+  <li><span>Price</span><span class="biaodan"><input id="startPrice" name="" type="text" placeholder="Min.">-<input id="endPrice" name="" type="text" placeholder="Max."></span></li>
+</ul>
+
+</div>
+</div>
+<!-- pro filter -->
+
+<!-- pro filter 01 -->
+<div class="am-popup show_setting" id="profilter01">
+<div class="am-popup-inner">
+
+    <div class="am-popup-hd" > 
+    <div class="menu_title">
+    <h4 class="am-popup-title am-fl">Brand</h4>
+    <span data-am-modal-close class="am-close">&times;</span>
+    </div>
+    </div>
+<input id="brandChoose" value="0" hidden></input>  
+<ul class="am-list pro_filter" id="brandSelect">
+  <li><a class="orange" href="#" value="0">All</a></li>
+  <li><a href="#" value="1">Apple</a></li>
+  <li><a href="#" value="2">Asus</a></li>
+  <li><a href="#" value="3">Blackview</a></li>
+  <li><a href="#" value="4">CHERRY MOBILE</a></li>
+  <li><a href="#" value="5">Cloudfone</a></li>
+  <li><a href="#" value="6">Huawei</a></li>
+  <li><a href="#" value="7">Lenovo</a></li>
+</ul>
+<script>
+$("#brandSelect li a").click(function(){
+    $("#brandSelect li a").removeClass('orange');
+    $(this).addClass('orange');
+    $("#brandChoose").val($(this).attr("value"));
+});
+
+
+</script
+
+</div>
+</div>
+<!-- pro filter 01 -->
+
+</body>
+</html>

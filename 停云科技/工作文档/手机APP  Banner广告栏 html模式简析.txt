@@ -1,0 +1,34 @@
+手机APP  Banner广告栏 html模式简析
+
+新版广告栏采用webview内嵌html广告页的形式实现。
+html页面与app通过指定的特殊格式的接口进行交互请求。对应请求模板如下：
+ldjsbridge://nav/openLinkInNewWebView?p=XXX
+其中
+ldjsbridge : scheme头，用来与app进行通讯标志，标志本次请求为页面与app交互请求
+nav ：host部分，该部分用于app进行定位对应的功能模块Controller
+openLinkInNewWebView ： path部分，该部分用于app定位对应功能模块下的具体方法
+p=XXX ： query部分，该部分为app具体方法所对应的接收参数，XXX为json格式字符串。app在接收到对应参数后，可以进行相对应的方法逻辑处理
+
+目前整套逻辑采用已经实现好相关插件的jsBridge。
+前端引用LDJSBridge.js，配置好对应的请求，便可做出以上规定格式的ldjsbridge请求，请求两端通用；
+app端可采用已经实现的项目工程，也可以根据以上规定的请求格式，或参考以下项目内容自行实现对应方法。
+Android端的项目git地址为：https://github.com/Lede-Inc/LDJSBridge_Android.git
+IOS端的项目git地址为：https://github.com/Lede-Inc/LDJSBridge_IOS.git
+
+广告位html模板跳转类型：
+1 直接跳转到web活动页面的活动宣传栏（一般是纯生的html页面，用于进行活动宣传所用，页面内部可能存在着一些与app进行交互的区域）；
+2 跳转到对应的native原生界面的广告栏；
+2.1 跳转到对应商品详情view；
+2.2 跳转到对应目录列表view；
+2.3 跳转到对应内置活动列表view（clearance，New Arrivals，Goods Wow）
+2.4 跳转到其他可能存在的活动view（临时新加的活动，不在目前app内置的活动view模板之中的，可以通过请求专门编写的webview，里面基本都是需要响应手机操作的）
+
+
+app中的广告栏点击效果类型（同时得兼容以前和现在的模式）
+1.点击打开WebView；
+2.点击打开原生界面的对应模块。
+
+在app端的首页广告栏还是采用原生自带的模块，通过接口返回的字段类型，来处理是直接跳转对应模块，还是跳转到对应的html广告页。
+
+传递的json中linktype，表示当前的首页广告类型，目前默认的：linktype=1.跳转对应的商品详情模块；linktype=2.跳转对应的目录详情模块；linktype=3.跳转对应的互动页面模块；linktype=4.跳转外部广告页
+

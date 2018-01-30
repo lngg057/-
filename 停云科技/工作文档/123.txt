@@ -1,0 +1,5 @@
+1.rating 排序按照实际的分数高低进行排序
+2.评分的数字改成统一带一个小数点的形式
+
+
+		String reviewCountFormat = new DecimalFormat("0.0").format(productReviewCount);// 支付金额

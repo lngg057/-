@@ -1,0 +1,271 @@
+/*
+* @Author: Administrator
+* @Date:   2016-08-30 09:27:59
+* @Last Modified by:   Administrator
+* @Last Modified time: 2016-08-30 18:14:20
+*/
+/* -----------------------------首页提示内容-------------------------- */
+.noti-home{
+	width: 100%;
+	height: 60px;
+	background: #fff9d7;
+	border-top: 1px solid #e2c822;
+	border-bottom: 1px solid #e2c822;
+	position: fixed;
+}
+.noti-home i{
+	width: 20px;
+	height: 17px;
+	display: inline-block;
+	float: left;
+	background:url(../images/noti-icon.png) no-repeat;
+	margin: 10px 0 0 20px;
+}
+.noti-home p{
+	display: inline-block;
+	font-size: 14px;
+	color: #333;
+	font-weight: 400;
+	line-height: 24px;
+	width: 1134px;
+	float: left;
+	margin: 8px 0 0 10px;
+}
+.noti-home span{
+	width: 11px;
+	height: 10px;
+	display: block;
+	float: right;
+	margin-top:10px;
+	background:url(../images/close.png) no-repeat;
+
+}
+/* -----------------------------首页内容-------------------------- */
+.box{
+	width: 100%;
+}
+
+/* -----------------------左侧标题-------------------- */
+.con-l{
+	width: 240px;
+	height: 203px;
+	float: left;
+	background:#fff;
+	margin-top: 20px;
+	border-radius: 4px;
+}
+.con-l ul li{
+	width: 240px;
+	height: 50px;
+	border-bottom: 1px solid #e5e5e5;
+}
+.con-l ul .on{
+	background: #ed761e;
+	border-radius: 4px 4px 0 0 ;
+}
+.con-l ul .on span{
+	color: #fff;
+}
+.con-l ul li a span{
+	font-size: 18px;
+	color: #ed761e;
+	line-height: 50px;
+	margin-left: 20px;
+}
+
+/* -------------------------右侧内容----------------------- */
+.con-r{
+	width: 940px;
+	height: 700px;
+	background: #fff;
+	float: right;
+	margin-top: 20px;
+	border-radius: 4px;
+}
+/* -------------------------搜索内容----------------------- */
+.search{
+	width: 900px;
+	height: 84px;
+	margin: 40px auto 0 auto;
+	border-bottom: 1px solid #ccc;
+}
+.search-l{
+	width: 390px;
+	height: 50px;
+	float: left;
+}
+.search-l select{
+	width: 300px;
+	height: 50px;
+	border-radius: 4px;
+	outline: none;
+	padding-left: 10px;
+}
+.search-l a{
+	width: 80px;
+	height: 50px;
+	display: inline-block;
+	background: #2497e3;
+	font-size: 16px;
+	color: #fff;
+	text-align: center;
+	line-height: 50px;
+	border-radius: 4px;
+	margin-left: 5px;
+}
+
+.search-r{
+	width: 280px;
+	height: 50px;
+	float: right;
+	position: relative;
+}
+.search-r input{
+	width: 270px;
+	height: 48px;
+	padding-left: 10px;
+	outline: none;
+	border: 0;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+.search-r a{
+	width: 50px;
+	height: 50px;
+	background: #d42424;
+	display: inline-block;
+	position: absolute;
+	right:-1px;
+	top: 0px;
+	border-radius: 0 4px 4px 0;
+}
+.search-r a img{
+	display: block;
+	margin: 11px auto;
+}
+/* --------------------------summary内容------------------------ */
+.summary{
+	width: 900px;
+	height: 174px;
+	margin: 0 auto;
+	border-bottom: 1px solid #ccc;
+	padding-top: 20px;
+}
+.summary p{
+	font-size: 16px;
+	font-weight: 400;
+	color: #ed761e;
+	float: left;
+}
+.summary a{
+	font-size: 14px;
+	color: #2497e3;
+	float: right;
+	text-decoration: underline;
+}
+.sum-list{
+	width: 900px;
+	height: 100px;
+	float: left;
+	/* background: pink; */
+	margin-top: 20px;
+}
+table{
+	border: 1px solid #e5e5e5;
+}
+table th{
+	font-size: 14px;
+	color: #333;
+	font-weight: 400;
+	background: #F6F6F6;
+	width: 150px;
+	height: 50px;
+	line-height: 50px;
+	border: 1px solid #e5e5e5;
+}
+table td{
+	font-size: 14px;
+	color: #333;
+	text-align: center;
+	border: 1px solid #e5e5e5;
+
+}
+/* --------------------------推荐内容------------------------ */
+.recom{
+	width: 900px;
+	height: 330px;
+	margin: 0 auto;
+	padding-top: 20px;
+}
+.recom-con{
+	position: relative;
+}
+.recom p{
+	font-size: 16px;
+	color: #ed761e;
+	font-weight: 400;
+}
+.recom ul{
+	width: 850px;
+	height: 270px;
+	margin: 20px auto;
+
+}
+.recom ul li{
+	width: 180px;
+	height: 270px;
+	border: 1px solid #e5e5e5;
+	float: left;
+	margin:0 15px;
+}
+.recom ul li a img{
+	height: 180px;
+}
+.recom ul li a span{
+	font-size: 12px;
+	color: #333;
+	line-height: 14px;
+	padding-left: 5px;
+}
+.btn{
+	display: block;
+	font-size: 14px;
+	color: #ed761e;
+	width: 120px;	
+	height: 30px;
+	border-radius: 4px;
+	border: 2px solid #ed761e;
+	text-align: center;
+	line-height: 30px;
+	margin: 10px auto;
+}
+.btn:hover{
+	background: #ed761e;
+	color: #fff;
+}
+.arr-l{
+	width: 33px;
+	height: 34px;
+	background:url(../images/recom-arr.fw.png) no-repeat 0 -68px ;
+	display: block;
+	position: absolute;
+	top: 50%;
+	margin-top: -17px;
+}
+ .arr-r{
+	width: 33px;
+	height: 34px;
+	background:url(../images/recom-arr.fw.png) no-repeat 0 0 ;
+	display: block;
+	position: absolute;
+	top: 50%;
+	margin-top: -17px;
+	right: 0;
+
+}
+.recom-con .arr-l:hover {
+	background:url(../images/recom-arr.fw.png) no-repeat 0 -102px ;
+}
+.recom-con .arr-r:hover {
+	background:url(../images/recom-arr.fw.png) no-repeat 0 -34px ;
+}

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/siteindex.xsd">
+  <sitemap>
+    <loc>https://www.goods.ph/sitemap/sitemap-series-seasonal-pages.xml</loc>
+    <lastmod>2016-07-21T15:42:35+08:00</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://www.goods.ph/sitemap/sitemap-categories.xml</loc>
+    <lastmod>2016-07-21T15:42:58+08:00</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://www.goods.ph/sitemap/sitemap-brands.xml</loc>
+    <lastmod>2016-07-21T15:43:48+08:00</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://www.goods.ph/sitemap/sitemap-product-1.xml</loc>
+    <lastmod>2016-07-21T15:45:08+08:00</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://www.goods.ph/sitemap/sitemap-product-2.xml</loc>
+    <lastmod>2016-07-21T15:49:10+08:00</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://www.goods.ph/sitemap/sitemap-product-3.xml</loc>
+    <lastmod>2016-07-21T15:53:23+08:00</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://www.goods.ph/sitemap/sitemap-product-4.xml</loc>
+    <lastmod>2016-07-21T15:55:12+08:00</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://www.goods.ph/sitemap/sitemap-product-5.xml</loc>
+    <lastmod>2016-07-21T15:59:45+08:00</lastmod>
+  </sitemap>
+</sitemapindex>

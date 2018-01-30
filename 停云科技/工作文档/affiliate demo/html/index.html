@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Goods</title>
+<script type="text/javascript" src="../js/jquery-1.10.2.min.js"></script>
+<script src="../js/script.js"></script>
+<script>
+	$(function(){
+		$("#nav").find("a").click(function(){
+			var p=$(this).parent();
+			p.attr("class","selected");
+			p.siblings().attr("class","default");
+		})
+	})
+		$(function(){
+		$("#sub-menu").find("a").click(function(){
+			var p=$(this).parent();
+			p.attr("class","selected");
+			p.siblings().attr("class","default");
+		})
+	})
+</script>
+<link rel="stylesheet" type="text/css" media="all" href="css/whhg.css" />
+</head>
+
+<body class="easyui-layout" >
+<!--top -->
+<div data-options="region:'north',border:false">
+  <div class="logo"> 
+
+Signed in as <b>tingyuntech-20</b> |
+    <a href="login.html" class="a_12_org">sign out</a>
+
+  </div>
+</div>
+<!--top -->
+
+<!--left -->
+<div data-options="region:'west',border:false,split:false" class="left">
+<div id="nav" class="nav">
+  <ul class="accordion" style="background-color:#eee;">
+<li id="one" class="selected" onclick="javascript:parent.frames['main'].location='product_links.html'"><a target="main"><span>Product Links</span></a>
+    </li>
+<li id="two" class="default" onclick="javascript:parent.frames['main'].location='banner_links.html'"><a  target="main"><span>Banner Links</span></a>
+    </li>
+    <li id="three" class="default"  onclick="javascript:parent.frames['main'].location='link_checker.html'" ><a target="main"><span>Link Checker</span></a>
+    </li>
+<li id="four"  class="default"  onclick="javascript:parent.frames['main'].location='reports.html'"><a  target="main"><span>Reports</span></a>
+    </li>
+    <li id="five"  class="default"  onclick="javascript:parent.frames['main'].location='account_setting.html'"><a  target="main"><span>Account Setting</span></a>
+    </li>
+  </ul>
+ </div> 
+</div>
+
+<!--left -->
+
+<!--right -->
+<div data-options="region:'center',border:false,split:false" style="overflow:hidden;">
+  <iframe name="main" src="product_links.html"  height="100%"  width="100%" frameborder="0" scrolling="no" ></iframe>
+</div>
+<!--right -->
+
+
+<script type="text/javascript">
+		$(document).ready(function() {
+			// Store variables
+			var accordion_head = $('.accordion > li > a'),
+				accordion_body = $('.accordion li > .sub-menu');
+			// Open the first tab on load
+			accordion_head.first().addClass('active').next().slideDown('normal');
+
+			// Click function
+			accordion_head.on('click', function(event) {
+				// Disable header links
+				event.preventDefault();
+				// Show and hide the tabs on click
+				if ($(this).attr('class') != 'active'){
+					accordion_body.slideUp('normal');
+					$(this).next().stop(true,true).slideToggle('normal');
+					accordion_head.removeClass('active');
+					$(this).addClass('active');
+				}
+			});
+			});
+	</script>
+
+</body>
+</html>

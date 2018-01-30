@@ -1,0 +1,249 @@
+/*
+* @Author: Administrator
+* @Date:   2016-08-31 16:03:28
+* @Last Modified by:   Administrator
+* @Last Modified time: 2016-09-01 09:49:53
+*/
+box{
+	width: 100%;
+}
+input{
+	outline: none;
+}
+
+/* -----------------------左侧标题-------------------- */
+.con-l{
+	width: 240px;
+	height: 203px;
+	float: left;
+	background:#fff;
+	margin-top: 20px;
+	border-radius: 4px;
+}
+.con-l ul li{
+	width: 240px;
+	height: 50px;
+	border-bottom: 1px solid #e5e5e5;
+}
+.con-l ul .on{
+	background: #ed761e;
+	border-radius: 4px 4px 0 0 ;
+}
+.con-l ul .on span{
+	color: #fff;
+}
+.con-l ul li a span{
+	font-size: 18px;
+	color: #ed761e;
+	line-height: 50px;
+	margin-left: 20px;
+}
+/* -----------------------右侧内容-------------------- */
+.con-r{
+	width: 940px;
+	/* height:1600px; */
+	background: #fff;
+	border-radius: 4px;
+	float: right;
+	margin-top: 20px;
+}
+.con-r h1{
+	width: 930px;
+	height: 50px;
+	background: #EAEAEA;
+	font-size: 16px;
+	padding-left: 10px;
+	border-radius: 4px 4px 0 0;
+	line-height: 50px;
+	color:#ed761e; 
+	font-weight: 400;
+}
+.step{
+	width: 900px;
+	margin: 0 auto;
+}
+.step img{
+	display: block;
+	margin: 30px auto;
+}
+.step p{
+	font-size: 16px;
+	color: #333;
+	text-align: center;
+	margin-top: 20px;
+}
+/* ---------------------------tab内容------------------------------- */
+.gethtml-con{
+	width: 900px;
+	/* height: 960px; */
+	margin: 20px auto;
+	position: relative;
+	z-index: 3;
+}
+.gethtml-con-title li {
+	width: 130px;
+	height: 50px;
+	float: left;
+}
+.gethtml-con-title li a span{
+	font-size: 16px;
+	color: #333;
+	line-height: 50px;
+	text-align: center;
+	display: block;
+	
+}
+.on-1{
+	border: 1px solid #ccc;
+	border-bottom: 0;
+	background: #fff;
+}
+.on-1 a span{
+	border-top:2px solid #ed761e;
+}
+.text-i-con{
+	width: 898px;
+	/* height: 900px; */
+	border: 1px solid #ccc;
+	margin-top: -1px;
+}
+/* ---------------------------tab link1内容------------------------------ */
+.link-one{
+	width: 420px;
+/* 	height: 400px; */
+	float: left;
+	padding: 10px;
+}
+.link-title{
+	width: 420px;
+	height: 30px;
+	border-bottom: 1px solid #e5e5e5;
+	margin-top: 20px;
+}
+.link-title h3{
+	font-size: 16px;
+	color: #ed761e;
+	line-height: 30px;
+	font-weight: 400;
+	display: block;
+	float: left;
+}
+
+.link1{
+	padding: 20px 0 0 10px;
+}
+.link1 span{
+	font-size: 14px;
+	color: #333;
+	display: block;
+	margin-bottom: 20px;
+}
+.link1 span i{
+	line-height: 36px;
+	font-style: normal;
+	font-size: 14px;
+	color: #333;
+	text-align:left;
+	display: inline-block;
+
+}
+.bg-p{
+	position: relative;
+}
+.bg-color{
+	width: 240px;
+	height: 36px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	padding-left: 10px;
+}
+
+.title-color{
+	width: 28px;
+	height: 25px;
+	border: 1px solid #000;
+	background: #0066c0;
+	position: absolute;
+	top: 5px;
+	left:136px;
+}
+.price-color{
+	width: 28px;
+	height: 25px;
+	border: 1px solid #000;
+	background: #333;
+	position: absolute;
+	top: 5px;
+	left:136px;
+}
+/* ---------------------------tab  link2内容------------------------------ */
+.live-two{
+	width: 420px;
+/* 	height: 400px; */
+	float: right;
+	padding: 10px;
+}
+.live-two p{
+	font-size: 14px;
+	color: #333;
+	line-height: 24px;
+	margin-top: 20px;
+}
+.flower{
+	font-size: 14px;
+	color: #0066c0;
+	display: block;
+	text-align: center;
+	margin-top: 30px;
+}
+/* ---------------------------tab link3内容------------------------------ */
+.get-three{
+	width: 880px;
+	/* height: 400px; */
+	float: left;
+	margin: 20px 10px 0 10px;
+}
+.title-3{
+	width: 880px;
+}
+.web{
+	font-size: 14px;
+	color: #333;
+	margin-top: 20px;
+	padding-left: 10px;
+}
+textarea{
+	width: 50%;
+	display: block;
+	margin: 20px auto;
+	padding:10px 20px;
+	outline: none;
+	border-left: 4px solid #ed761e;
+}
+.html-btn{
+	font-size: 16px;
+	color: #0066c0;
+	width: 200px;
+	height: 46px;
+	display: block;
+	margin: 20px auto;
+	border: 2px solid #0066c0;
+	border-radius: 4px;
+	text-align: center;
+	line-height: 46px;
+}
+.html-btn:hover{
+	background: #0066c0;
+	color: #fff;
+}
+strong{
+	font-size: 16px;
+	font-weight: 700;
+	color: #333;
+	display: block;
+	text-align: center;
+	margin-bottom: 20px;
+}
+strong span{
+	font-weight: 400;
+}

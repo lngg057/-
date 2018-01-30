@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript" src="../js/jquery-1.10.2.min.js"></script>
+<script src="../js/script.js"></script>
+<link rel="stylesheet" type="text/css" media="all" href="css/whhg.css" />
+</head>
+
+<body class="easyui-layout" style="height:100%; overflow:auto; background-color:#e8e8e8;">
+<!--right -->
+<div class="yp_right" >
+
+<p class="place"><a href="#">Home</a> › <a href="#">Account Setting</a></p>
+<h1 class="right_title">Add a New User</h1>
+
+<div class="fast">
+<span>Users added to the account will be able to view reports and build links, but they will not be able to update payment-related account information. An invited user should follow the link in the e-mail invitation to create a confirmation code. The primary user must then confirm the new user.</span>
+</div>
+
+<div class="yp_input">
+<p><label>Enter E-mail Address:</label><span><input name="" type="text"></span><input style="display:inline-block;" name="" type="button" value="Submit"></p>
+<p><label></label><span class="gray">Separate multiple entries using commas.<br>Example: customer@amazon.com, customer2@amazon.com</span></p>
+</div>
+
+<h1 class="right_title">Review Invitations</h1>
+<div class="fast" style="padding:0;">
+<span>Confirm or decline each user who has generated a confirmation code. If you haven't verified the code or aren't ready to take action, choose "Skip". Invited users who have not yet clicked the link in their invitation appear in a pending state.</span>
+</div>
+<div class="small_title01 small_title01_a">
+<b>Invited Users</b>
+<div class="yp_tab">
+<table border="0" class="easyui-datagrid" sortName="itemid" singleSelect="true">  
+    <thead>  
+        <tr>  
+            <th data-options="field:'price_jy'">E-mail Address</th>  
+            <th data-options="field:'price_jy'">Confirmation Code</th>  
+            <th data-options="field:'price_tk'">Review Invitation</th>  
+        </tr>  
+    </thead>  
+    <tbody>  
+        <tr>  
+            <td>no data</td>
+            <td>no data</td>    
+            <td>no data</td>   
+        </tr>     
+    </tbody>
+</table> 
+</div>
+</div>
+
+<h1 class="right_title">Manage Account Users</h1>
+<div class="fast" style="padding:0;">
+<span>Use the options below to change the primary account user and delete users. Please note that if you change the primary user, you will no longer have access to payment-related information and will not be able to make further changes to the account users.</span>
+</div>
+<div class="small_title01 small_title01_a">
+<b>Current Users</b>
+<div class="yp_tab">
+<table border="0" class="easyui-datagrid" sortName="itemid" singleSelect="true">  
+    <thead>  
+        <tr>  
+            <th data-options="field:'price_df'">Primary E-mail Address</th>  
+            <th data-options="field:'price_jy'">Change Primary</th>   
+        </tr>  
+    </thead>  
+    <tbody>  
+        <tr>  
+            <td>lngg_057@163.com<br>
+This is the main e-mail address listed against your Associates account. We will be sending important e-mails here, so please use an e-mail address that you check regularly.To delete this user, you must first select a new primary user, then come back and delete.</td>
+            <td><select>
+              <option selected>no change</option>
+            </select></td>       
+        </tr>     
+        <tr>  
+            <td><strong>All E-mail Addresses</strong></td>  
+            <td><a href="#">Delete User</a></td>   
+        </tr>  
+        <tr>  
+            <td>No Data</td>
+            <td>No Data</td>       
+        </tr> 
+        <tr>  
+            <td><strong>PublisherStudio users</strong></td>  
+            <td><a href="#">Delete User</a></td>   
+        </tr>  
+        <tr>  
+            <td>No Data</td>
+            <td>No Data</td>       
+        </tr>    
+    </tbody>
+</table> 
+</div>
+</div>
+
+
+</div>
+<!--right -->
+
+<div class="aff_bottom">
+Copyright Notice 2016 - Goods.ph Online Shopping Store Philippines
+</div>
+
+</body>
+</html>

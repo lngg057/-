@@ -1,0 +1,40 @@
+<!doctype html>
+<html class="no-js">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="stylesheet" href="css/amazeui.min.css">
+<link rel="stylesheet" href="css/app.css">
+<script src="js/jquery.min.js"></script>
+<script src="js/amazeui.min.js"></script>
+</head>
+
+<body style="background-color:#ebebeb;">
+<!-- top -->
+<header data-am-widget="header" class="am-header am-header-default top">
+<form role="form">
+    <input type="email" class="am-form-field" placeholder="Iphone" id="bbb">
+    <a href="javascript:history.go(-1);" class="am-btn am-btn-link">Cancel</a>
+</form>
+</header>
+<!--top -->
+
+<!--history -->
+<ul class="am-list search_history">
+  <li><a href="#">Iphone6 Plus<img src="images/ico_arrow01.png"></a></li>
+  <li><a href="#">PS4<img src="images/ico_arrow01.png"></a></li>
+  <li><a href="#">Harry Potter<img src="images/ico_arrow01.png"></a></li>
+  <li><a href="#">Book<img src="images/ico_arrow01.png"></a></li>
+</ul>
+<a class="am-btn am-btn-warning btn_history am-radius"  href="javascript:;" id="aaa">Clear History</a>
+<!--history -->
+<script>
+$("#aaa").click(function(){
+    var input=$("#bbb").val();
+});
+</script
+
+</body>
+</html>

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript" src="../js/jquery-1.10.2.min.js"></script>
+<script src="../js/script.js"></script>
+<script src="../js/chart.js"></script>
+<script src="../js/chart01.js"></script>
+<script src="../js/chart02.js"></script>
+</head>
+
+<body class="easyui-layout" style="height:100%; overflow:auto; background-color:#e8e8e8;">
+<!--right -->
+<div class="yp_right" >
+
+<p class="place"><a href="#">Home</a> › <a href="#">Reports</a></p>
+<h1 class="right_title">Reports</h1>
+
+<div style=" float:left;vertical-align:top;">
+<a href="#" class="easyui-menubutton" data-options="menu:'#mm1',iconCls:'icon-tip'">Feb 01 2016 - Feb 24 2016 / <span class="blue">This Month</span></a>
+<!--child -->
+<div id="mm1" class="menu-content">
+<div class="child">
+<ul class="win_ul">
+<li><input name="" type="radio" value=""><span>Today (Feb 25 2016)</span></li>
+<li><input name="" type="radio" value=""><span>Yesterday (Feb 24 2016)</span></li>
+<li><input name="" type="radio" value=""><span>Last 7 Days (Feb 18 2016 - Feb 24 2016)</span></li>
+<li><input name="" type="radio" value=""><span>Last 30 Days (Jan 26 2016 - Feb 24 2016)</span></li>
+</ul>
+<span style="text-align:right; display:block;"><a id="btn" href="#" class="easyui-linkbutton">Apply</a> 
+<a id="btn" href="#" class="easyui-linkbutton">Cancel</a> 
+</span>
+</div>
+</div>
+<!--child -->    
+</div>
+
+<div style=" float:right; vertical-align:top;">
+<span style=" font-size:12px;">Last Updated: 00:00 Feb 23 2016 PST | </span>
+<a href="#" class="easyui-menubutton blue" data-options="menu:'#mm2',iconCls:'icon-tip'">Return to Classic Reporting</a>
+    <!--child -->
+<div id="mm2" class="menu-content">
+<div class="child">
+<p>I want to return to Classic Reporting because...</p>
+<textarea name="" cols="" rows=""></textarea>
+<a id="btn" href="#" class="easyui-linkbutton">View Classic Reporting</a> 
+</span>
+</div>
+</div>
+
+        <!--child -->   
+</div>
+
+<div style="clear:both;"></div>
+
+<div class="tubiao">
+<div id="tt" class="easyui-tabs">  
+    <div title="Summary | $ 0.00">  
+<div id="container"></div>
+
+<div class="small_title01 small_title01_a yp_home_user_con01">
+<b>Fees Summary</b>
+<span><i>Clicks</i><h1>0</h1></span>
+<span><i>Ordered</i><h1>0</h1></span>
+<span><i>Shipped</i><h1>0</h1></span>
+<span><i>Conversion</i><h1>0</h1></span>
+<span><i> <strong>Earnings</strong></i><h1>0</h1></span>
+</div>
+
+<div class="small_title01 small_title01_a">
+<b>Referral Rate (This Month)</b>
+<span>Your Referral Rate this month is <strong>4.00%</strong> with <strong>0</strong> items shipped (excluding returned items)</span>
+<span>Increase Your Referral Rate to <strong class="blue">6.00%</strong> by shipping <strong class="blue">7</strong> more items</span>
+</div>
+
+<div style="clear:both;"></div>
+
+<div class="small_title01 small_title01_a yp_home_user_con01">
+<b>Bounties Summary</b>
+<span><i>Bounties Summary</i><h1>0</h1></span>
+<span><i> <strong>Earnings</strong></i><h1>0</h1></span>
+<span><i> <strong>Total Earnings Summary</strong></i><h1>0</h1></span>
+</div>
+
+<div class="small_title01 small_title01_a">
+<b>Featured Promotions & Events</b>
+<img src="../theme/default/images/banner01.png"/>
+<img src="../theme/default/images/banner01.png"/>
+ </div>
+
+    </div>  
+    <div title="Fees | $ 0.00">  
+<div id="container01" style="width:96%;"></div> 
+
+<div class="small_title01 small_title01_a yp_home_user_con01">
+<span><i>Clicks</i><h1>0</h1></span>
+<span><i>Ordered Items</i><h1>0</h1></span>
+<span><i>Shipped Items</i><h1>0</h1></span>
+<span><i>Returned Items</i><h1>0</h1></span>
+<span><i>Conversion</i><h1>0</h1></span>
+<span><i>Shipped Items Revenue</i><h1>0</h1></span>
+<span><i> <strong>Total Earnings</strong></i><h1>0</h1></span>
+</div>
+
+<div style="margin:20px;">
+<div id="tt" class="easyui-tabs">  
+    <div title="Ordered Items" >  
+<div class="yp_tab">
+<table border="0" class="easyui-datagrid" sortName="itemid" singleSelect="true">  
+    <thead>  
+        <tr>  
+            <th data-options="field:'price_jy'">Product Title</th>  
+            <th data-options="field:'price_jy'">Category</th>  
+            <th data-options="field:'price_tk'">Product Link Clicks</th>  
+            <th data-options="field:'state'">Product Link Conversion</th>  
+            <th data-options="field:'time_jy'">Merchant</th>  
+            <th data-options="field:'time_zf'">Ordered Through Product Links</th>  
+            <th data-options="field:'time_cj'">All Other Items Ordered</th>
+            <th data-options="field:'time_cj'">Total Items Ordered</th>
+        </tr>  
+    </thead>  
+    <tbody>  
+        <tr>  
+            <td>0</td>
+            <td>0</td>    
+            <td>012242424|684910</td>
+            <td>300.00 </td> 
+            <td>122.00 </td>
+            <td>Routers</td>
+            <td>2013-12-04 09:23:56</td> 
+            <td>2013-12-04 09:23:50</td>  
+        </tr>     
+    </tbody>
+</table> 
+<div id="pp" class="easyui-pagination" data-options="total:2000,pageSize:10"></div>
+</div>
+
+    </div>  
+    <div title="Earnings">  
+
+<div class="yp_tab">
+<table border="0" class="easyui-datagrid" sortName="itemid" singleSelect="true">  
+    <thead>  
+        <tr>  
+            <th data-options="field:'price_jy'">Product Title</th>  
+            <th data-options="field:'price_jy'">Merchant</th>  
+            <th data-options="field:'price_tk'">Price</th>  
+            <th data-options="field:'state'">Advertising-Fee Rate</th>  
+            <th data-options="field:'time_jy'">Items Shipped</th>  
+            <th data-options="field:'time_zf'">Revenue</th>  
+            <th data-options="field:'time_cj'">Advertising Fee</th>
+            <th data-options="field:'time_cj'">Device Type</th>
+        </tr>  
+    </thead>  
+    <tbody>  
+        <tr>  
+            <td>0</td>
+            <td>0</td>    
+            <td>012242424|684910</td>
+            <td>300.00 </td> 
+            <td>122.00 </td>
+            <td>Routers</td>
+            <td>2013-12-04 09:23:56</td> 
+            <td>0</td>    
+        </tr>     
+    </tbody>
+</table> 
+<div id="pp" class="easyui-pagination" data-options="total:2000,pageSize:10"></div>
+</div>
+
+    </div>  
+ 
+</div> 
+</div> 
+
+
+<div style="margin:20px;">
+<div id="tt" class="easyui-tabs">  
+    <div title="Tracking ID Summary" >  
+<div class="yp_tab">
+<table border="0" class="easyui-datagrid" sortName="itemid" singleSelect="true">  
+    <thead>  
+        <tr>  
+            <th data-options="field:'price_jy'">Tracking ID</th>  
+            <th data-options="field:'price_jy'">Clicks</th>  
+            <th data-options="field:'price_tk'">Items Ordered</th>  
+            <th data-options="field:'state'">Items Shipped</th>  
+            <th data-options="field:'time_jy'">Shipped Items Revenue</th>  
+            <th data-options="field:'time_zf'">Advertising Fee</th>  
+        </tr>  
+    </thead>  
+    <tbody>  
+        <tr>  
+            <td>0</td>
+            <td>0</td>    
+            <td>012242424|684910</td>
+            <td>300.00 </td> 
+            <td>122.00 </td>
+            <td>Routers</td>
+        </tr>     
+    </tbody>
+</table> 
+<div id="pp" class="easyui-pagination" data-options="total:2000,pageSize:10"></div>
+</div>
+
+    </div>  
+    <div title="Link Type Performance">  
+
+<div class="yp_tab">
+<table border="0" class="easyui-datagrid" sortName="itemid" singleSelect="true">  
+    <thead>  
+        <tr>  
+            <th data-options="field:'price_jy'">Link Type</th>  
+            <th data-options="field:'price_jy'">Impressions</th>  
+            <th data-options="field:'price_tk'">Click-Through Rate</th>  
+            <th data-options="field:'state'">Clicks</th>  
+            <th data-options="field:'time_jy'">Conversion</th>  
+            <th data-options="field:'time_zf'">Items Ordered</th>  
+            <th data-options="field:'time_cj'">Items Shipped</th>
+            <th data-options="field:'time_cj'">Earnings</th>
+        </tr>  
+    </thead>  
+    <tbody>  
+        <tr>  
+            <td>0</td>
+            <td>0</td>    
+            <td>012242424|684910</td>
+            <td>300.00 </td> 
+            <td>122.00 </td>
+            <td>Routers</td>
+            <td>2013-12-04 09:23:56</td> 
+            <td>0</td>    
+        </tr>     
+    </tbody>
+</table> 
+<div id="pp" class="easyui-pagination" data-options="total:2000,pageSize:10"></div>
+</div>
+
+    </div>  
+ 
+ <div title="Daily Trends">  
+
+<div class="yp_tab">
+<table border="0" class="easyui-datagrid" sortName="itemid" singleSelect="true">  
+    <thead>  
+        <tr>  
+            <th data-options="field:'price_jy'">Date</th>  
+            <th data-options="field:'price_jy'">Clicks</th>  
+            <th data-options="field:'price_tk'">Unique Visitors</th>  
+            <th data-options="field:'state'">Items Ordered (Amazon)</th>  
+            <th data-options="field:'time_jy'">Total Items Ordered</th>  
+            <th data-options="field:'time_zf'">Conversion</th>  
+        </tr>  
+    </thead>  
+    <tbody>  
+        <tr>  
+            <td>0</td>
+            <td>0</td>    
+            <td>012242424|684910</td>
+            <td>300.00 </td> 
+            <td>122.00 </td>
+            <td>0</td>    
+        </tr>     
+    </tbody>
+</table> 
+<div id="pp" class="easyui-pagination" data-options="total:2000,pageSize:10"></div>
+</div>
+
+    </div>  
+ 
+</div> 
+</div> 
+
+<div class="small_title01 small_title01_a">
+<b>Notes</b>
+<span>1. Kindle E-Books Earnings You have referred 0 Kindle Free E-books and 0 Kindle Paid E-Books. Per our operating agreement, certain conditions may cause non payment of advertising fees.</span>
+<span>2.Transactions Ineligible for Fees Per our operating agreement, certain conditions and exclusions exist that may cause a purchase through a link to not earn advertising fees.</span>
+<span>3.Items with No Orders You might have linked to products which have been clicked but not ordered.</span>
+</div>
+
+    </div>  
+    <div title="Bounties | $ 0.00">  
+<div id="container02" style="width:96%;"></div>
+
+<div class="small_title01 small_title01_a yp_home_user_con01">
+<span><i><strong>Total Referrals</strong></i><h1>0</h1></span>
+<span><i> <strong>Total Earnings</strong></i><h1>0</h1></span>
+</div>
+
+<div class="small_title01 small_title01_a yp_home_user_con01">
+<b>Bounties <u style=" font-size:12px; color:#ccc; text-decoration:none; width:160px;">Feb 01 2016 - Feb 24 2016</u></b>
+<div class="yp_tab">
+<table border="0" class="easyui-datagrid" sortName="itemid" singleSelect="true">  
+    <thead>  
+        <tr>  
+            <th data-options="field:'price_jy'">Bounty Name</th>  
+            <th data-options="field:'price_jy'">Date</th>  
+            <th data-options="field:'price_tk'">Tracking ID</th>  
+            <th data-options="field:'state'">Referrals</th>  
+            <th data-options="field:'time_jy'">Advertising-Fee Rate</th>  
+            <th data-options="field:'time_zf'">Referral Fee</th>  
+        </tr>  
+    </thead>  
+    <tbody>  
+        <tr>  
+            <td>0</td>
+            <td>0</td>    
+            <td>012242424|684910</td>
+            <td>300.00 </td> 
+            <td>122.00 </td>
+            <td>0</td>    
+        </tr>     
+    </tbody>
+</table> 
+</div>
+</div>
+
+<div class="small_title01 small_title01_a">
+<b>Earn More from these Bounties</b>
+<img src="../theme/default/images/banner01.png"/>
+<img src="../theme/default/images/banner01.png"/>
+<img src="../theme/default/images/banner01.png"/>
+<img src="../theme/default/images/banner01.png"/>
+ </div>
+
+    </div>  
+</div> 
+</div> 
+
+</div>
+<!--right -->
+
+<div class="aff_bottom">
+Copyright Notice 2016 - Goods.ph Online Shopping Store Philippines
+</div>
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+support@goods.ph
+$upport@goods2014
+
+
+
+
+测试帐号
+Here is your client ID
+34782263799-pv7qrnjq0t42u8bgagsgjgt55flco9l2.apps.googleusercontent.com
+Here is your client secret
+eZuAnpJdndgVlxVqN5fSZA5K
+
+{
+    "web": {
+        "client_id": "34782263799-pv7qrnjq0t42u8bgagsgjgt55flco9l2.apps.googleusercontent.com",
+        "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+        "token_uri": "https://accounts.google.com/o/oauth2/token",
+        "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+        "client_secret": "eZuAnpJdndgVlxVqN5fSZA5K",
+        "redirect_uris": [
+            "https://www.goods.ph/register.html"
+        ],
+        "javascript_origins": [
+            "https://www.goods.ph"
+        ]
+    }
+}
+
+正式账号
+support@goods.ph
+$upport@goods2014
+
+常用地址 Metro Malina
+
+Project: goodsph-login
+Details about your project
+Project ID
+goodsph-login
+Project number
+34782263799
+
+{
+    "web":{
+        "client_id":"34782263799-pv7qrnjq0t42u8bgagsgjgt55flco9l2.apps.googleusercontent.com",
+        "project_id":"goodsph-login",
+        "auth_uri":"https://accounts.google.com/o/oauth2/auth",
+        "token_uri":"https://accounts.google.com/o/oauth2/token",
+        "auth_provider_x509_cert_url":"https://www.googleapis.com/oauth2/v1/certs",
+        "client_secret":"eZuAnpJdndgVlxVqN5fSZA5K",
+        "redirect_uris":[
+            "https://www.goods.ph/index.html"
+        ],
+        "javascript_origins":[
+            "https://www.goods.ph"
+        ]
+    }
+}
+
+https://lh3.googleusercontent.com/-EasLV-o0D70/AAAAAAAAAAI/AAAAAAAAAAA/q_h_hJw7qWQ/mo/photo.jpg?sz=96
