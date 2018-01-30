@@ -1,0 +1,18 @@
+物流轨迹跟踪基本功能流程请参考外面的对应的word文档。在已登录或者是未登录情况下，对应轨迹追踪页面都展示不同，这些需要在前端freemarker页面作相应控制
+
+核心代码位置：
+/goodscart/src/main/java/com/goods/action/account/AccountController.java
+对应方法：
+public ModelAndView checkorderStatus(HttpServletRequest request, HttpServletResponse response);
+
+订单判断逻辑如下：
+1.salesOrder中检查当前订单是否存在，不存在继续在subsalesOrder中找，还不存在直接返回
+2.判断当前用户session是否是在线状态，是的话获取当前登陆用户id，不在线的话根据填写的邮箱查找用户，用户不存在的话直接返回
+3.将当前查到的用户id同订单进行匹配，不是这个用户id下的订单的话直接返回
+4.以上完全匹配的话，进行数据查找。以下内容通过service提供
+5.先判断salesOrder中hassuborder是多少.如果hassuborder为-99，表示这是一个老订单，且当前订单无子订单，直接根据salesOrderId查询tracking_record中的物流信息
+6.如果hassuborder为0，表示当前订单尚未拆单，或者订单状态非正常（已取消，或者在线未支付等），这种因为不存在物流信息，不需要查询
+7.如果hassuborder为1，表示当前订单已被拆单，存在着子订单，这种情况，直接查询所有子订单subOrderId对应的tracking_record物流信息（有可能这时候没发货尚未生成物流信息）
+8.以总订单为标准，将获取到的物流信息以及总订单的订单状态汇总，生成相关数据
+
+相关的具体实现，请查阅对应代码以及注释，这个流程写的算很清楚了。

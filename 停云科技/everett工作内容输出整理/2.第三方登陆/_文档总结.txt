@@ -1,0 +1,24 @@
+第三方登陆，相关说明文档和最终设计文档，请查阅其他相关信息。
+目前我们系统中，接入第三方登陆的项目有front以及mobile，其中front包含facebook以及google+的登录，mobile端因为google+抛弃了相关的登陆接口，所以只存在facebook登陆的选项。
+
+相关后台执行代码入口如下：
+front端第三方登录
+/goodscart/src/main/java/com/goods/action/account/RegisterController.java
+public void thirdPartyLogin(HttpServletRequest request, HttpServletResponse response);
+
+mobile端第三方登录
+/mobileServiceBranch/src/main/java/com/goods/controller/RegisterController.java
+public void thirdPartyLogin(HttpServletRequest request, HttpServletResponse response);
+
+相关代码逻辑请自行查看代码，以及注释。
+
+附上相关参数常量的位置：
+/mobileServiceBranch/src/main/java/com/goods/util/Constants.java
+/goodscart/src/main/java/com/goods/util/Constants.java
+
+下面有对应登录服务的地址，appid以及appkey。分别是
+WEB_CLIENT_ID,IOS_CLIENT_ID,GOOGLE_AUTH_URL,FACEBOOK_AUTH_URL
+
+
+前端页面端的登录服务调用过程，参见其他的总结文档。
+app端的登陆服务调用过程，参见app相关项目中的代码

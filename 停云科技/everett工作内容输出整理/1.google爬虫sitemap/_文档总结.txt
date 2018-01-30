@@ -1,0 +1,51 @@
+生成网站爬虫文件功能位于后台 store-mgr中，采用定时任务，定时生成文件，然后采用同步工具，将相关的文件，同步到主站网站的相关目录下
+
+文件位置：/store-mgr/src/main/java/com/goods/backend/scheduledtask/ScheduledSiteMapTasks.java
+
+方法开始位置：public void generateSiteMap();
+
+采用定时器，每天晚上2：30，生成相关xml文件，文件对应格式如下，所有文件的时间采用标准时间格式。
+sitemap.xml
+sitemap-brands.xml
+sitemap-categories.xml
+sitemap-product-1.xml
+sitemap-product-2.xml
+...
+sitemap-product-n.xml
+sitemap-series-seasonal-pages.xml
+
+其中sitemap.xml为主爬虫索引文件，其中包含其他的相关索引文件
+
+sitemap-brands.xml为主站的品牌索引文件，对应格式如下，loc中放入的是当前品牌的链接页
+<url>
+    <loc>https://www.goods.ph/brand/audiovox_corporation.html</loc>
+    <lastmod>2016-07-21T12:09:31+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+</url>
+
+sitemap-categories.xml为主站的所有的末级目录索引文件，对应格式如下，loc中放入的是当前目录的链接页
+<url>
+    <loc>https://www.goods.ph/category/online-shopping-health-beauty-55.html</loc>
+    <lastmod>2016-07-19T13:10:13+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+</url>
+
+sitemap-product-X.xml为主站的所有的在售卖的索引文件，对应格式如下，一个xml存储最多1000条商品信息，loc中放入的是当前商品的链接页
+<url>
+    <loc>https://www.goods.ph/ladies-pu-high-quality-shoulder-bag-19533.html</loc>
+    <lastmod>2016-05-16T12:40:25+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+</url>
+
+sitemap-series-seasonal-pages.xml为当前主站所有的活动推广页，对应格式如下，在活动页作出修改的时候，这里需要手工修改对应的链接，loc中放入的是当前活动页的链接
+<url>
+    <loc>https://www.goods.ph/new-arrivals.html</loc>
+    <lastmod>2016-07-20T12:40:13+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+</url>
+
+生成xml文件的过程略，请参考相关代码和注释。

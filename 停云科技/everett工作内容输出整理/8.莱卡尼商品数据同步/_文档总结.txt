@@ -1,0 +1,14 @@
+莱卡尼的商品数据导入，目前来看，功能是一次性的，就是只负责第一次将莱卡尼的商品数据导入到我们数据库中，之后就不再跑了。尽管代码里面，包含商品新增，以及商品更新两个功能。
+
+代码位置：/GoodsApi/src/main/java/com/goods/action/LekaniProductSyncController.java
+功能起始位置：public ModelAndView lekani(HttpServletRequest request, HttpServletResponse response);
+
+核心代码位置：/goods-provider/src/main/java/com/goods/opt/PlatformGoodsImportOptImpl.java
+
+整体功能以及流程操作如下：
+1.首先调用方法 /lekani/getPlatformCategory.html ，获取莱卡尼提供的对应商品目录层级信息，这些信息会存储在表platformCategoryRelation中，用于后期的商品数据插入来源。
+2.调用 /lekani/showPlatformCategory.html ，更新/新增之前对应目录下的商品。
+3.插入莱卡尼的商品到我们库的基本操作如下。首先将获取到的商品进行目录属性的关联，然后按照 LEKANI+productName+规格属性+规格属性值的形式，重新拼接商品名称，然后将商品相关属性拼接成短描述。如果这件商品是第一次出现的时候，进行product相关表插入，包括产品描述，商品状态，商品信息，商品橱窗图，商品库存，商品sku信息等字段的更新或者插入。
+4.整个项目的操作过程中，都存在事务的控制，避免在批量进行导入或者更新的时候，因为某个节点失败，而导致整个导入数据的失败，根据代码可以知道，目前失败的范围被控制在每件商品上，即整个流程之后，导入失败的商品不会影响其他正常数据的商品。
+
+额外补充一点。目前在进行莱卡尼目录属性以及我们自己网站目录属性关联的时候，是写死的方法。具体的目录属性对应表，可以参考外面的文档，里面有整理出来的，所有目录对应信息。就这个地方可能会比较耗时一点，以后如果万一要重写这里，可以参考下之前写的文档

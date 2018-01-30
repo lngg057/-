@@ -1,0 +1,279 @@
+1、买家自动注册并登陆接口
+请求地址：/buyer/registerAndLogin
+请求参数：
+buyer_name=wusong4	//买家用户名
+jsonpCallback  //跨域请求时使用
+示例：
+http://192.168.2.26:8080/soa-im/buyer/registerAndLogin?buyer_name=wusong4
+返回：
+{
+  "state": 1,
+  "success": true,
+  "message": "",
+  "data": {
+    "token": "px8igcwf4zfsujjh"
+  }
+}
+
+
+2、买家退出接口
+请求地址：/buyer/logout
+请求参数：
+buyer_name=wusong4	//买家用户名
+token=
+jsonpCallback  //跨域请求时使用
+示例：
+http://192.168.2.26:8080/soa-im/buyer/logout?buyer_name=zhouyu&token=h6akft17kyvg0ysi
+返回：
+{
+  "state": 1,
+  "success": true,//业务逻辑处理是否成功
+  "message": "",
+  "data": {
+    
+  }
+}
+
+3、获取 买家 登陆成功后，首次展示的会话列表
+请求地址：/buyer/logout
+请求参数：
+buyer_name=wusong4	//买家用户名
+token=
+jsonpCallback  //跨域请求时使用
+示例：
+http://47.90.104.235:8070/soa-im/buyer/getFirstShowChatList?buyer_name=chaogai&token=5jfq5n0fi6s1rzim
+返回：
+{
+  "state": 1,
+  "success": true,//业务处理是否成功
+  "message": "",//反馈的信息，比如失败原因
+  "data": {
+    "mlist": [
+      {
+        "unread": "6",//未读消息数
+        "cname": "zhouyu"//聊天对方用户名
+      }
+    ]
+  }
+}
+
+
+
+4、获取买家 实时最新 会话列表
+请求地址：/buyer/getCurrentChatList
+请求参数：
+buyer_name=chaogai	//买家用户名
+token=ozvqsq4qy49bzat5
+jsonpCallback  //跨域请求时使用
+示例：
+http://47.90.104.235:8070/soa-im//buyer/getCurrentChatList?buyer_name=chaogai&token=ozvqsq4qy49bzat5
+返回：
+{
+  "state": 1,
+  "success": true,
+  "message": "",
+  "data": {
+    "mlist": [
+      {
+        "unread": "3",
+        "cname": "sunsanniang"
+      }
+    ]
+  }
+}
+
+5、获取 买家 历史记录消息
+请求地址：buyer/getHistoryMsg
+请求参数：
+shopname=sunsannian 	//聊天对方用户名（卖家）
+buyer_name=chaogai	//本人（买家）账号
+page_no=2	//查询历史消息的 页码 （可选，缺省值为 “1”）
+page_size=10	//查询历史消息的 单页显示总条数 （可选，缺省值为“10”）
+token=
+jsonpCallback  //跨域请求时使用
+示例：
+http://47.90.104.235:8070/soa-im//buyer/getHistoryMsg?shopname=sunsanniang&buyer_name=chaogai&token=ozvqsq4qy49bzat5&page_no=1&page_size=10
+返回：
+{
+  "state": 1,
+  "success": true,
+  "message": "",
+  "data": {
+    "buyer_name": "chaogai",
+	"current_page_no": 2,	//当前获取的历史消息页码数
+	"current_page_size": 10,	//当前获取的历史消息单页数据总条数
+    "detailList": [
+      {
+        "text": "aaa",
+        "type": 0,
+        "time": "2017-06-16 17:23:46",
+        "from": "sunsanniang",
+        "to": "chaogai"
+      },
+      {
+        "text": "bb",
+        "type": 0,
+        "time": "2017-06-16 17:23:47",
+        "from": "sunsanniang",
+        "to": "chaogai"
+      },
+      {
+        "text": "ccc",
+        "type": 0,
+        "time": "2017-06-16 17:23:49",
+        "from": "sunsanniang",
+        "to": "chaogai"
+      },
+      {
+        "text": "ddd",
+        "type": 0,
+        "time": "2017-06-16 17:28:18",
+        "from": "sunsanniang",
+        "to": "chaogai"
+      },
+      {
+        "text": "ddddddddddd",
+        "type": 0,
+        "time": "2017-06-16 17:33:43",
+        "from": "sunsanniang",
+        "to": "chaogai"
+      }
+    ]
+  }
+}
+
+6、获取最新消息
+请求地址：/buyer/getMsg
+请求参数：
+shopname=sunsannian 	//聊天对方用户名（卖家）
+buyer_name=chaogai	//本人（买家）账号
+token=
+jsonpCallback  //跨域请求时使用
+示例：
+http://47.90.104.235:8070/soa-im//buyer/getMsg?shopname=sunsanniang&buyer_name=chaogai&token=ozvqsq4qy49bzat5
+返回：
+{
+  "state": 1,
+  "success": true,
+  "message": "",
+  "data": {
+    "msgList": [
+      {
+        "text": "fffff",
+        "type": 0,
+        "time": "2017-06-16 17:41:52"
+      }
+    ]
+  }
+}
+
+
+7、发送消息
+请求地址：/buyer/sendMsg
+请求参数：
+shopname=sunsannian 	//聊天对方用户名（卖家）
+buyer_name=chaogai	//本人（买家）账号
+content 	//消息内容
+content_type	//消息体类型：“0”：普通的纯文本消息，以及表情图片的占位符。 ；“1”：图片消息类型，及能够获取图片内容的URL地址。“2”：图文混合的商品消息类型。
+token=
+jsonpCallback  //跨域请求时使用
+示例：
+http://47.90.104.235:8070/soa-im//buyer/sendMsg?content=wowo&shopname=sunsanniang&buyer_name=chaogai&token=ozvqsq4qy49bzat5
+返回：
+{
+  "state": 1,
+  "success": true,
+  "message": "",
+  "data": {
+    "msg": {
+      "text": "wowo",
+      "type": 0,
+      "time": "2017-06-16 17:45:01"
+    }
+  }
+}
+
+
+8、上传图片
+请求地址：/buyer/uploadImage
+请求参数：
+buyer_name=zhouyu	//本人（买家）账号
+return_type=  	//上传图片成功后，数据的返回方式  1:json 或者 jsoup 格式（缺省）。 2：message/uploadPicSuccess.ftl 模板套数据。3：img HTML 标签内容
+is_do_send_msg=true/false    //上传图片成功后，是否后台执行 发送图片消息 操作。true: 发送。  不传，或者值为空，为其它值，均不执行发送消息操作。
+from		//若要执行发送图片消息，则该参数是发送人
+to			//若要执行发送图片消息，则该参数是接收人
+imgFile 	//上传的图片
+token=
+jsonpCallback  //跨域请求时使用
+示例：
+http://192.168.2.26:8080/soa-im/buyer/uploadImage
+返回：
+return_type=1时：
+{
+  "state": 1,
+  "success": true,	//业务处理是否成功
+  "message": "",	//反馈的信息，比如失败原因
+  "data": {
+    "url": "http://192.168.2.26:8080/soa-im/statics/upload/20170616144611170.jpg"	//上传成功后的图片访问URL
+  }
+}
+
+
+return_type=2时：
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<input type="hidden" id="uploadResultId" data="true" data-msg="" value="1" data-url="http://192.168.2.26:8080/soa-im/statics/upload/20170623153552948.jpg">
+		
+		<script>
+			var base = "/soa-im";
+		</script>
+	</body>
+</html>
+
+return_type=3时：
+<img src="http://192.168.2.26:8080/soa-im/statics/upload/20170623151546934.jpg" />
+
+
+
+9、获取未读新消息总数
+请求地址：/buyer/getUnreadMsgCount?buyer_name=sunsanniang&token=85oj7nfh55snoi7l
+请求参数：
+buyer_name=sunsanniang	//本人（买家）账号
+token=
+jsonpCallback  //跨域请求时使用
+示例：
+http://192.168.2.26:8080/soa-im/buyer/getUnreadMsgCount?buyer_name=sunsanniang&token=85oj7nfh55snoi7l
+返回：
+{
+  "state": 1,
+  "success": true,	//业务处理是否成功
+  "message": "",	//反馈的信息，比如失败原因
+  "data": {
+    "unReadMsgCount": 6		//未读最新消息总数
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

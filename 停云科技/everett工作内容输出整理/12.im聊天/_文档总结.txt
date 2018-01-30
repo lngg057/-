@@ -1,0 +1,77 @@
+im聊天服务分布在以下几个位置：
+1.app（ios，android）客户端聊天
+2.pc html页面聊天框
+3.soa-im 项目，主要是连接openfire以及其他客户端之间的中间服务
+4.openfire基础服务，im聊天的基础服务
+
+下面就以上几点，分别说明下功能的实现
+
+一、app（ios，android）客户端聊天,因为是共同基于xmpp协议，所以主要服务是直接同openfire建立连接，而不需要从第三方衔接。具体的连接过程和实现方法，请查看对应客户端的相关代码，基本上来说，都是通过第三方插件的直接调用实现的。
+
+二、pc html页面聊天。之前是采用接口调用+轮询的方式，通过soa-im来间接实现实时会话的功能。现在已经改成了接口调用+websocket长连接的形式，通过soa-im 来实现实时会话的功能。
+pc 的聊天功能分布在partner项目以及front项目中。核心实现代码如下：
+sockjs.js（这个js被用来在前端建立websocket通道，兼容多种连接方式。在不能正确创建websocket的时候，会尝试其他的，例如轮询，iframe，xhr等替代形式）
+/goodscart/src/main/webapp/pc-style/js/im/main.js
+/goods-partner/src/main/webapp/static/js/chart/main.js
+
+两边的代码都差不多，大概讲一下实现的原理：
+在第一次用户点击聊天框之后，系统尝试根据当前登陆主站的用户，自动登录openfire聊天系统。当用户成功登陆后，前端会创建两个长连接，分别是/sockjs/getUserMsg，以及/sockjs/getChatList。第一个是用来实时获取用户聊天信息的，第二个是用来获取当前最新聊天列表和未读信息的。之后的就是常规操作了，调用接口发送信息，接受信息然后将元素添加到页面dom节点中。
+同时，在切换聊天对象之后，需要使用sockjs通过websocket的通道，主动post消息给后台，表明当前聊天对象已经切换，之后通道里便会收到来自新聊天对象的信息了。
+整个js代码主要分为：聊天列表刷新，未读信息气泡刷新，当前聊天对话信息展示以及刷新，历史聊天记录拉取等几个大的模块，具体的模块实现方法可以查阅下对应的代码，这里就不展开说明了。
+
+三、soa-im 项目。这个项目算是一个中间服务提供者，主要是用来连接openfire和pc前端之间的桥梁。整个项目，目前用到的，对外的Controller有以下几个：
+/soa-im/src/main/java/com/he/im/controller/upload/UploadController.java（用来存储用户上传的照片）
+/soa-im/src/main/java/com/he/im/controller/user/BuyerController.java（front端用户im接口的一系列操作，包括自动注册，登录，退出等，因为涉及到了跨域，所以使用了jsonp）
+/soa-im/src/main/java/com/he/im/controller/user/SellerController.java（seller端用户im接口的一系列操作，包括用户注册，登录，退出聊天系统等等，同上因为涉及到了跨域，所以使用了jsonp）
+
+整个项目连接openfire，是基于smack组件实现的，建立连接的代码如下：
+/soa-im/src/main/java/com/he/im/conn/ImConnection.java
+public AbstractXMPPConnection getConnectionc(String account);
+通过XMPPConnection建立起同openfire服务器的连接
+
+连接openfire之后，还需要建立起与openfire服务器之间的监听，以便能及时获取到消息，所以在代码
+public Boolean login(String account, String password, final boolean isSeller);
+中，在用户登录之后，创建了一个监听器ChatManagerListener，在这个监听器中，重载了他的processMessage()方法，当获取到了新的信息之后，该方法会被自动调用，从而我们可以在内部处理传递过来的相关信息。
+注意：为了考虑到数据吞吐处理的能力，所有用户聊天相关的消息都是先处理，并存储到redis中，当被调用的时候，再从redis中获取。
+
+具体的相关实现，可以直接查阅代码以及注释。这里着重说明下修改的websocket功能。
+新增的websocket功能，是基于spring-websocket的，调用的是javax-websocket项目下准则。需要springmvc至少4.3，以及web-app 3.0以上的版本支持，对应的主要新增文件如下：
+/soa-im/src/main/resources/spring/spring_websocket.xml（配置文件，引入websocket功能）
+/soa-im/src/main/java/com/he/im/interceptor/HandshakeInterceptor.java（请求拦截器，主要是在握手连接建立之前进行校验或者是处理相关的数据信息）
+/soa-im/src/main/java/com/he/im/handler/GetChatListHandler.java
+/soa-im/src/main/java/com/he/im/handler/GetMsgHandler.java（两个handler都是继承自TextWebSocketHandler，主要是在握手连接之后的一些相关操作，包括连接异常，收到socket信息，连接开启，连接关闭的一些状态等）
+/soa-im/src/main/java/com/he/im/common/GetChatListTimer.java
+/soa-im/src/main/java/com/he/im/common/GetMsgTimer.java（两个timer是两个定时任务线程连接池，主要的目的是为了在前端和soa-im建立websocket连接之后，实时获取redis中的相关数据，并将数据通过websocket，传递给前端的接口调用）
+
+上面的其他部分还好说，主要复杂点是在两个Timer上，采用定时任务查询用户信息。
+这边代码都有详细的注释，主要的功能，是围绕着threadPool，CONSUMPTION_MAP，以及WEBSOCKETSESSION_MAP这三者展开的。在用户登入，多浏览器登入，登出，切换聊天用户的时候，都会有新增定时任务，或者是移除定时任务的判断以及操作，因为逻辑过于复杂，文字描述不清，所以请查看相关代码和注释来了解实现方案。
+
+四、openfire基础服务。整个项目的搭建以及配置可以参考外面已经整理好的文档，包括：
+openfire源码导入MyEclipse10
+工程整合
+相关工程部署
+
+按照文档，一步步来的话，基本上将openfire服务搭起来是没什么问题的。
+其实openfire实质上就是单纯的数据库，自己做了一些代码层面的数据缓存和封装，在用基于xmpp的形式，实现的实时通讯功能。
+由于单纯的基于数据库操作，所以openfire在数据吞吐上的实效性其实并不是非常的好，所以可以通过引入redis之类的数据缓存来辅助实现其交互性。
+
+这边着重讲一下openfire怎么自己编写并引入第三方插件。
+openfire对插件的支持是很好的，所以能够辅助实现或者扩展很多原本没有实现的功能。通过继承基础接口，在重写原有方法的基础上，实现新方法，而不会破坏原本的openfire项目。
+编写插件的时候，在openfire项目的src\plugins位置下编写你需要的功能代码，这边以我写的用户注册信息扩展插件"userRegisterPlugin"为例子，整个目录结构如下 (/openfire_src_hm_20170509/src/plugins/userRegisterPlugin/)
+|--lib() 存放当前插件所需要的扩展jar包
+|--src() 插件源码位置
+|--changelog.html() 更新日志，在openfire管理界面可以看到该说明
+|--logo_large.gif() 插件logo，在openfire插件管理界面可以看到该logo
+|--logo_small.gif() 插件logo，在openfire插件管理界面可以看到该logo
+|--plugin.xml() 配置的插件类名以及jar包名，用于ant build打包文件的时候使用
+|--readme.html() 简介说明，在openfire管理界面可以看到该说明
+
+基本上代码都编写在src中，具体怎么实现功能，请参考代码以及相关注释。
+
+当写完插件功能之后，需要进行ant打包，对应的build文件位置如下：
+/openfire_src_hm_20170509/build/build.xml
+打完jar包之后，直接讲对应生成的jar包拖进openfire的插件管理界面，之后openfire会自动启动该插件
+
+其中共同的接口方法有以下两个
+public void initializePlugin(PluginManager manager, File pluginDirectory);  //在插件启动的时候，调用该方法
+public void destroyPlugin();  //在插件被销毁的时候，调用该方法

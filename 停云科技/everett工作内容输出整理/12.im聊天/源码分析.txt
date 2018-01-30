@@ -1,0 +1,15 @@
+20170622
+1、org.jivesoftware.openfire.nio.ConnectionHandler  可能是openfire对外服务的主入口。
+----->  org.jivesoftware.openfire.net.StanzaHandler.process(String, XMPPPacketReader)  消息分发？？？？
+----->	org.jivesoftware.openfire.spi.PacketRouterImpl.route(Message)  消息路由？？？？
+----->	org.jivesoftware.openfire.MessageRouter.route(Message)	
+----->	org.jivesoftware.openfire.spi.RoutingTableImpl.routePacket(JID, Packet, boolean)
+----->	org.jivesoftware.openfire.spi.RoutingTableImpl.routeToBareJID(JID, Message)  转发消息给对方  ？？？？
+----->
+----->
+----->
+----->
+----->
+----->
+
+2、org.jivesoftware.openfire.starter.ServerStarter.main(String[])  项目工程启动主入口。

@@ -1,0 +1,24 @@
+功能位于seller项目，功能的主要目的是让商家从第三方售卖平台，自动将自己的商品信息导入到我们自己的平台中，目前只支持lazada
+
+简要描述下功能实现的方法
+
+文件位置：/goods-partner/src/main/java/com/goods/modules/controller/ProductController.java
+
+方法起始位置：public Map<String, String> generateLazadaHtmlData(HttpServletRequest request, HttpServletResponse response);
+
+使用工具类：Jsoup
+
+基本原理：通过Jsoup接口，主动模拟请求，访问目标地址网站，获取对应网站的页面元素信息，并调用Jsoup的方法，解析并定位对应的页面元素（css定位），以达到获取其中的相关信息的目标。
+
+具体的实现请参考代码相关信息和注释，对Jsoup函数的操作了解，请查阅相关文档。
+
+额外说明一点。目前很多网站针对这种类型的数据爬取做了限制，比方说禁止ip，页面关键信息图片化，数据混淆等。
+我这边的代码中，只是做了随机模拟浏览器的userAgent字符串，以及简单的请求失败后，重新请求的应对办法。
+实际上，完备的代码还需要有更多的操作，比方说多ip轮换，关键header信息模拟，失败请求处理机制等。这些操作可以等以后有实际业务需求了之后再行补充。
+
+目前可以从lazada获取到的产品信息(后期页面元素标签可能会更换，导致需要重新获取)
+1.商品名  [h1#prod_title]
+2.产品亮点  [div#prod_content_wrapper div.prod_details]
+3.商品详细描述(图片数据大部分采用外链的形式，不确定所有的图片都能正常显示)  [div#productDetails]
+4.商品尺寸(长x宽x高)(cm)(如果存在该字段)  [table.specification-table tbody tr td.bold]  Size (L x W x H)
+5.商品重量(kg)(如果存在该字段)  [table.specification-table tbody tr td.bold] Weight

@@ -1,0 +1,301 @@
+
+1、商家登陆接口
+请求地址：/seller/login
+请求参数：
+shopname=zhouyu
+pwd=123456
+jsonpCallback  //跨域请求时使用
+示例：
+http://192.168.2.26:8080/soa-im//seller/login?shopname=zhouyu&pwd=123456
+返回：
+{
+  "state": 1,
+  "success": true,  //业务逻辑处理是否成功
+  "message": "",	//返回的提示信息，比如失败原因
+  "data": { //返回数据
+    "token": "ydqs0z139b75cfcj"
+  }
+}
+
+2、商家退出接口
+请求地址：/seller/logout
+请求参数：
+shopname=zhouyu
+token=
+jsonpCallback  //跨域请求时使用
+示例：
+http://192.168.2.26:8080/soa-im/seller/logout?shopname=zhouyu&token=h6akft17kyvg0ysi
+返回：
+{
+  "state": 1,
+  "success": true,//业务逻辑处理是否成功
+  "message": "",
+  "data": {
+    
+  }
+}
+
+3、获取现有会话列表信息（登陆成功后，此时展示的会话列表信息）
+请求地址：/seller/getFirstShowChatList
+请求参数：
+shopname=zhouyu
+token=
+jsonpCallback  //跨域请求时使用
+示例：
+http://192.168.2.26:8080/soa-im/seller/getFirstShowChatList?shopname=zhouyu&token=ydqs0z139b75cfcj
+返回：
+{
+  "state": 1,
+  "success": true, //业务处理是否成功
+  "message": "",	//反馈的信息，比如失败原因
+  "data": {
+    "mlist": [
+      {
+        "unread": -1,	//未读消息数
+        "cname": "liutang"	//聊天对方用户名
+      },
+      {
+        "unread": -1,
+        "cname": "songjiang"
+      },
+      {
+        "unread": -1,
+        "cname": "sunsiniang"
+      },
+      {
+        "unread": "4",
+        "cname": "sunsanniang"
+      },
+      {
+        "unread": -1,
+        "cname": "huarong"
+      }
+    ]
+  }
+}
+
+
+4、获取实时会话列表信息（在商家用户成功登陆后，当有新的用户发送新的消息时，通过此接口获取新增的会话列表信息），此接口是3、获取现有会话列表信息（登陆成功后，此时展示的会话列表信息）
+的补充接口。
+请求地址：/seller/getCurrentChatList
+请求参数：
+shopname=zhouyu
+token=
+jsonpCallback  //跨域请求时使用
+示例：
+http://192.168.2.26:8080/soa-im/seller/getCurrentChatList?shopname=zhouyu&token=jb8vc1f70f9ghw09
+返回：
+{
+  "state": 1,
+  "success": true, //业务处理是否成功
+  "message": "", //反馈的信息，比如失败原因
+  "data": {
+    "mlist": [
+      {
+        "unread": "19",  //未读消息数
+        "cname": "sunsanniang"  //聊天对方用户名
+      }
+    ]
+  }
+}
+
+
+5、获取历史消息
+请求地址：seller/getHistoryMsg
+请求参数：
+shopname=zhouyu	//本人（商家）账号
+buyer_name=sunsanniang	//聊天对方用户名（买家）
+page_no=2	//查询历史消息的 页码 （可选，缺省值为 “1”）
+page_size=10	//查询历史消息的 单页显示总条数 （可选，缺省值为“10”）
+token=
+jsonpCallback  //跨域请求时使用
+示例：
+http://192.168.2.26:8080/soa-im/seller/getHistoryMsg?shopname=zhouyu&buyer_name=sunsanniang&token=kbu8l8uo4o6amxxj&page_no=2&page_size=10
+返回：
+{
+  "state": 1,
+  "success": true,	//业务处理是否成功
+  "message": "",	//反馈的信息，比如失败原因
+  "data": {
+    "shopname": "zhouyu",	//本人（商家）账号
+	"current_page_no": 2,	//当前获取的历史消息页码数
+	"current_page_size": 10,	//当前获取的历史消息单页数据总条数
+    "detailList": [
+      {
+        "text": "q11",	//消息具体内容
+        "type": 0,	//消息类型：“0”：普通的纯文本消息，以及表情图片的占位符。 ；“1”：图片消息类型，及能够获取图片内容的URL地址。“2”：图文混合的商品消息类型。
+        "time": "2017-06-16 09:27:54",	//消息创建时间
+        "from": "sunsanniang",	//发信人（买家）
+        "to": "zhouyu"	//收信人（商家）
+      },
+      {
+        "text": "q22",
+        "type": 0,
+        "time": "2017-06-16 09:27:56",
+        "from": "sunsanniang",
+        "to": "zhouyu"
+      },
+      {
+        "text": "q33",
+        "type": 0,
+        "time": "2017-06-16 09:27:59",
+        "from": "sunsanniang",
+        "to": "zhouyu"
+      },
+      {
+        "text": "q44",
+        "type": 0,
+        "time": "2017-06-16 09:29:24",
+        "from": "sunsanniang",
+        "to": "zhouyu"
+      },
+      {
+        "text": "q55",
+        "type": 0,
+        "time": "2017-06-16 09:29:56",
+        "from": "sunsanniang",
+        "to": "zhouyu"
+      }
+    ]
+  }
+}
+
+
+6、发送消息
+请求地址：/seller/sendMsg
+请求参数：
+shopname=zhouyu	//本人（商家）账号
+buyer_name=sunsanniang	//聊天对方用户名（买家）
+content		//消息内容
+content_type	//消息体类型：“0”：普通的纯文本消息，以及表情图片的占位符。 ；“1”：图片消息类型，及能够获取图片内容的URL地址。“2”：图文混合的商品消息类型。
+token=
+jsonpCallback  //跨域请求时使用
+示例：
+http://192.168.2.26:8080/soa-im/seller/sendMsg?content=hello&content_type=0&shopname=zhouyu&buyer_name=sunsanniang&token=qqit7w6zn1t5te7f
+返回：
+{
+  "state": 1,
+  "success": true,		//业务处理是否成功
+  "message": "",		//反馈的信息，比如失败原因
+  "data": {
+    "msg": {
+      "text": "hello",	//发送的消息内容
+      "type": 0,	//发送的消息类型
+      "time": "2017-06-16 10:54:12"		//发送消息的创建时间（SOA-IM所在服务器时间）
+    }
+  }
+}
+
+
+7、上传图片
+请求地址：/seller/uploadImage
+请求参数：
+shopname=zhouyu	//本人（商家）账号
+return_type=  	//上传图片成功后，数据的返回方式  1:json 或者 jsoup 格式（缺省）。 2：message/uploadPicSuccess.ftl 模板套数据。3：img HTML 标签内容
+is_do_send_msg=true/false    //上传图片成功后，是否后台执行 发送图片消息 操作。true: 发送。  不传，或者值为空，为其它值，均不执行发送消息操作。
+from		//若要执行发送图片消息，则该参数是发送人
+to			//若要执行发送图片消息，则该参数是接收人
+imgFile 	//上传的图片
+token=
+jsonpCallback  //跨域请求时使用
+示例：
+http://192.168.2.26:8080/soa-im/seller/uploadImage
+返回：
+return_type=1时：
+{
+  "state": 1,
+  "success": true,	//业务处理是否成功
+  "message": "",	//反馈的信息，比如失败原因
+  "data": {
+    "url": "http://192.168.2.26:8080/soa-im/statics/upload/20170616144611170.jpg"	//上传成功后的图片访问URL
+  }
+}
+
+return_type=2时：
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<input type="hidden" id="uploadResultId" data="true" data-msg="" value="1" data-url="http://192.168.2.26:8080/soa-im/statics/upload/20170623153552948.jpg">
+		
+		<script>
+			var base = "/soa-im";
+		</script>
+	</body>
+</html>
+
+return_type=3时：
+<img src="http://192.168.2.26:8080/soa-im/statics/upload/20170623151546934.jpg" />
+
+
+8、获取最新消息
+请求地址：/seller/getMsg
+请求参数：
+shopname=zhouyu	//本人（商家）账号
+buyer_name=sunsanniang		////聊天对方用户名（买家）
+token=
+jsonpCallback  //跨域请求时使用
+示例：
+http://192.168.2.26:8080/soa-im/seller/getMsg?shopname=zhouyu&buyer_name=sunsanniang&token=qqit7w6zn1t5te7f
+返回：
+{
+  "state": 1,
+  "success": true,	//业务处理是否成功
+  "message": "",	//反馈的信息，比如失败原因
+  "data": {
+    "msgList": [
+      {	
+        "text": "dddd",	//消息内容
+        "type": 0,	//消息体类型：“0”：普通的纯文本消息，以及表情图片的占位符。 ；“1”：图片消息类型，及能够获取图片内容的URL地址。“2”：图文混合的商品消息类型。
+        "time": "2017-06-16 10:34:11"	//消息时间
+      }
+    ]
+  }
+}
+
+
+9、获取未读新消息总数
+请求地址：/seller/getUnreadMsgCount
+请求参数：
+shopname=zhouyu	//本人（商家）账号
+token=
+jsonpCallback  //跨域请求时使用
+示例：
+http://192.168.2.26:8080/soa-im/seller/getUnreadMsgCount?shopname=zhouyu&token=162615j0x120mw21
+返回：
+{
+  "state": 1,
+  "success": true,	//业务处理是否成功
+  "message": "",	//反馈的信息，比如失败原因
+  "data": {
+    "unReadMsgCount": 6		//未读最新消息总数
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
